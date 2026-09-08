@@ -50,12 +50,13 @@ ingreso_prom_total
 # Sí, ganan $866.286 frente a $655.291 del promedio general.
 # Puede ser ya que al tener más años de estudio permite acceder a puestos con mejores sueldos.
 
-# 5. Pregunta propia: ¿Se gana más en Servicios que en Agricultura? 
+# 5. ¿Se gana más en Servicios que en Agricultura? 
 ingreso_agri <- mean(casen$ingreso[casen$sector == "Agricultura"], na.rm = TRUE) 
 ingreso_serv <- mean(casen$ingreso[casen$sector == "Servicios"], na.rm = TRUE)
 # Se agrega el na.rm por los valores perdidos del ingreso
 
+# Resultados
 ingreso_agri
 ingreso_serv
 
-# En conclusion en promedio servicio tiene mas ingresos que agricultura.
+# En promedio servicios tiene mas ingresos que agricultura.
