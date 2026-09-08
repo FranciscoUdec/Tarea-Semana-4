@@ -8,10 +8,10 @@
 casen <- read.csv("data/raw/casen_reducido.csv")
 
 # 2. Explorar estructura antes de calcular
-dim(casen)
-str(casen)
-head(casen)
-summary(casen)
+dim(casen)      # Muestra cantidad de filas y columnas
+str(casen)      # Muestra la estructura y tipo de cada columna
+head(casen)     # Muestra las primeras 6 filas
+summary(casen)  # Da un resumen estadistico de cada variable
 
 # Tipos de datos
 # region: character 
@@ -27,15 +27,14 @@ summary(casen)
 sub_servicios <- casen[casen$sector == "Servicios" & casen$educ > 12, ]
 
 # 4. Estadísticas del subset vs total
-n_total <- nrow(casen)
-n_sub   <- nrow(sub_servicios)
+n_total <- nrow(casen)          # Cuenta las filas totales
+n_sub   <- nrow(sub_servicios)  # Cuenta las filas del grupo filtrado
 
-edad_prom_total <- mean(casen$edad)
-edad_prom_sub   <- mean(sub_servicios$edad)
+edad_prom_total <- mean(casen$edad)          # Promedio de edad total
+edad_prom_sub   <- mean(sub_servicios$edad)  # Promedio de edad del grupo
 
-ingreso_prom_total <- mean(casen$ingreso, na.rm = TRUE)
-ingreso_prom_sub   <- mean(sub_servicios$ingreso, na.rm = TRUE)
-
+ingreso_prom_total <- mean(casen$ingreso, na.rm = TRUE) # Sueldo promedio total
+ingreso_prom_sub   <- mean(sub_servicios$ingreso, na.rm = TRUE) # Sueldo promedio grupo
 # resultados
 n_sub
 n_total
